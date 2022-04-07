@@ -2,7 +2,15 @@
 
 @use "./helpers" as *;
 
-.stack {
+$stack-class-name: stack;
+$stack-sizes: (1, 2, 3, 4, 5);
+$stack-align: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+);
+
+.#{$stack-class-name} {
   $root: &;
 
   display: flex;
@@ -22,8 +30,6 @@
   }
 
   // Spacing
-  $stack-sizes: 1, 2, 3, 4, 5;
-
   @each $size in $stack-sizes {
     &--spacing-#{$size} {
       @include create-breakpoint-selectors {
@@ -33,12 +39,6 @@
   }
 
   // Alignment
-  $stack-align: (
-    start: flex-start,
-    center: center,
-    end: flex-end,
-  );
-
   @each $align-name, $align-value in $stack-align {
     // Block
     &--align-block-#{$align-name} {

@@ -2,4 +2,4 @@
 // Author: Alexander Erlandsson
 // GitHub: https://github.com/alexerlandsson/stack-scss
 
-@forward "_stack";
+@forward "_stack" hide $stack-class-name, $stack-sizes, $stack-align;

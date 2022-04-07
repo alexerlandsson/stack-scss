@@ -13,7 +13,23 @@ Experimental stack component used to stack elements horizontally and vertically 
 Include the folder `src/stack` in your _scss_ project and import the component using `@use` targeting `stack/index.scss`.
 
 ```scss
-@use "[PATH]/stack" as *;
+@use "[PATH]/stack";
+```
+
+### Use with custom variable settings
+
+Some configurable values are set using _scss_ variables. To customize these values in your project you can set these directly in the `@use`.
+
+```scss
+@use "[PATH]/stack" with (
+  $stack-class-name: custom-name,
+  $stack-sizes: (2, 4, 8),
+  $stack-align: (
+    start: start,
+    center: center,
+    end: end,
+  )
+);
 ```
 
 ## Settings
@@ -50,13 +66,13 @@ Spacing is by default set by the `size()` function found in `src/helpers/_functi
 
 #### Usage of spacing
 
-To add spacing of one base unit (8px * 1 = 8px), add the modifier `.stack--spacing-1`. In the example below, all items will have a spacing of `8px` between them.
+To add spacing of one base unit (8px \* 1 = 8px), add the modifier `.stack--spacing-1`. In the example below, all items will have a spacing of `8px` between them.
 
 ```html
 <div class="stack stack--spacing-1"></div>
 ```
 
-To add spacing of two base units (8px * 2 = 16px), add the modifier `.stack--spacing-2`. In the example below, all items will have a spacing of `16px` between them.
+To add spacing of two base units (8px \* 2 = 16px), add the modifier `.stack--spacing-2`. In the example below, all items will have a spacing of `16px` between them.
 
 ```html
 <div class="stack stack--spacing-2"></div>
@@ -70,9 +86,9 @@ Alignment is set using block and/or inline alignment. Just as CSS logical proper
 
 Available alignments are set in the `$stack-align` map. Available alignments by default are:
 
-* start (flex-start)
-* center
-* end (flex-end)
+- start (flex-start)
+- center
+- end (flex-end)
 
 #### Block alignment
 
@@ -103,7 +119,7 @@ All modifiers are set up with breakpoint specific selectors to make it possible 
 The example below shows how to set the stack to be vertical by default and switch to horiztonal in the breakpoint `md`.
 
 ```html
-<div class="stack stack--vertical stack--horizontal:md">
+<div class="stack stack--vertical stack--horizontal:md"></div>
 ```
 
 ## Work in this repository

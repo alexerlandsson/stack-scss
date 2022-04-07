@@ -3,12 +3,15 @@
   <head>
     <title>Stack SCSS Demo</title>
 
-    <meta charset="UTF-8">
-    <meta name="description" content="Experimental stack component used to stack elements horizontally and vertically.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#ffffff">
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Experimental stack component used to stack elements horizontally and vertically."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#ffffff" />
 
     <style>
       :root {
@@ -63,14 +66,14 @@
       }
     </style>
 
-    <link rel="stylesheet" href="./dist/stack.css">
+    <link rel="stylesheet" href="./dist/stack.css" />
   </head>
   <body>
     <main class="container">
       <div class="section">
         <h1>Stack SCSS Demo</h1>
       </div>
-      
+
       <div class="section">
         <h2>Default</h2>
         <div class="description">stack</div>
@@ -92,7 +95,9 @@
 
       <div class="section">
         <h2>Vertical Center</h2>
-        <div class="description">stack stack--vertical stack--spacing-2 stack--align-inline-center</div>
+        <div class="description">
+          stack stack--vertical stack--spacing-2 stack--align-inline-center
+        </div>
         <div class="stack stack--vertical stack--spacing-2 stack--align-inline-center">
           <div class="placeholder">Placeholder</div>
           <div class="placeholder">Placeholder</div>
@@ -112,17 +117,24 @@
 
       <div class="section">
         <h2>Horizontal Align Block Start</h2>
-        <div class="description">stack stack--horizontal stack--spacing-2 stack--align-block-start stack--separate-last-child</div>
-        <div class="stack stack--horizontal stack--spacing-2 stack--align-block-start stack--separate-last-child">
+        <div class="description">
+          stack stack--horizontal stack--spacing-2 stack--align-block-start
+          stack--separate-last-child
+        </div>
+        <div
+          class="stack stack--horizontal stack--spacing-2 stack--align-block-start stack--separate-last-child"
+        >
           <div class="placeholder">Placeholder</div>
-          <div class="placeholder" style="height: 100px;">Placeholder</div>
+          <div class="placeholder" style="height: 100px">Placeholder</div>
           <div class="placeholder">Placeholder</div>
         </div>
       </div>
 
       <div class="section">
         <h2>Horizontal Align Inline End</h2>
-        <div class="description">stack stack--horizontal stack--spacing-2 stack--align-inline-end</div>
+        <div class="description">
+          stack stack--horizontal stack--spacing-2 stack--align-inline-end
+        </div>
         <div class="stack stack--horizontal stack--spacing-2 stack--align-inline-end">
           <div class="placeholder">Placeholder</div>
           <div class="placeholder">Placeholder</div>
@@ -139,7 +151,6 @@
           <div class="placeholder">Placeholder</div>
         </div>
       </div>
-
     </main>
   </body>
 </html>
