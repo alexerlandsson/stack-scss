@@ -1,0 +1,29 @@
+{
+  "name": "stack-scss",
+  "version": "1.0.0",
+  "autor": "Alexander Erlandsson",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass ./src/index.scss ./dist/stack.css",
+    "prettier": "prettier --write .",
+    "stylelint": "stylelint '**/*.scss'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexerlandsson/stack-scss.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexerlandsson/stack-scss/issues"
+  },
+  "homepage": "https://github.com/alexerlandsson/stack-scss#readme",
+  "devDependencies": {
+    "prettier": "^2.6.2",
+    "sass": "^1.50.0",
+    "stylelint": "^14.6.1",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^3.0.0"
+  }
+}

@@ -1,0 +1,84 @@
+@use "./helpers" as *;
+
+@mixin create-breakpoint-selectors {
+  @content;
+
+  &\:sm {
+    @media (min-width: 200px) {
+      @content;
+    }
+  }
+
+  &\:md {
+    @media (min-width: 600px) {
+      @content;
+    }
+  }
+}
+
+.stack {
+  $root: &;
+  $stack-sizes: 1, 2, 3, 4, 5;
+  $stack-vertical-alignments: start, center, end;
+  $stack-horizontal-alignments: start, center, end;
+
+  display: flex;
+
+  // Vertical
+  &--vertical {
+    @include create-breakpoint-selectors {
+      flex-direction: column;
+    }
+  }
+
+  // Horizontal
+  &--horizontal {
+    @include create-breakpoint-selectors {
+      flex-direction: row;
+    }
+  }
+  
+  // Spacing
+  @each $size in $stack-sizes {
+    &--spacing-#{$size} {
+      @include create-breakpoint-selectors {
+        gap: size($size);
+      }
+    }
+  }
+
+  // Horizontal align
+  @each $align in $stack-horizontal-alignments {
+    &--align-#{$align} {
+      @include create-breakpoint-selectors {
+        justify-content: $align;
+
+        &#{$root}--horizontal {
+          align-items: $align;
+        }
+      }
+    }
+  }
+
+  // Vertical align
+  @each $valign in $stack-vertical-alignments {
+    &--valign-#{$valign} {
+      @include create-breakpoint-selectors {
+        align-items: $valign;
+
+        &#{$root}--horizontal {
+          justify-content: $valign;
+        }
+      }
+    }
+  }
+
+  // Separate last child
+  &--separate-last-child {
+    @include create-breakpoint-selectors {
+      & > *:last-child {
+        margin-left: auto;
+      }
+    }
+  }
+}
