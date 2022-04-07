@@ -1,5 +1,8 @@
+// Functions
+
 @use "sass:meta";
 
+// Function used to add spacing based on a base unit
 @function size($multiplier: 1, $base-unit: 8px) {
   @if meta.type-of($multiplier) == number {
     @return ($base-unit * $multiplier);

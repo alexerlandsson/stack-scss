@@ -1,20 +1,8 @@
+// Stack SCSS
+// Author: Alexander Erlandsson
+// GitHub: https://github.com/alexerlandsson/stack-scss
+
 @use "./helpers" as *;
-
-@mixin create-breakpoint-selectors {
-  @content;
-
-  &\:sm {
-    @media (min-width: 200px) {
-      @content;
-    }
-  }
-
-  &\:md {
-    @media (min-width: 600px) {
-      @content;
-    }
-  }
-}
 
 .stack {
   $root: &;
@@ -37,7 +25,7 @@
       flex-direction: row;
     }
   }
-  
+
   // Spacing
   @each $size in $stack-sizes {
     &--spacing-#{$size} {
