@@ -2,6 +2,7 @@
 
 @use "./helpers" as *;
 
+// Settings
 $stack-class-name: stack;
 $stack-sizes: (1, 2, 3, 4, 5);
 $stack-align: (
