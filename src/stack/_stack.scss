@@ -1,14 +1,9 @@
-// Stack SCSS
-// Author: Alexander Erlandsson
-// GitHub: https://github.com/alexerlandsson/stack-scss
+// Stack
 
 @use "./helpers" as *;
 
 .stack {
   $root: &;
-  $stack-sizes: 1, 2, 3, 4, 5;
-  $stack-vertical-alignments: start, center, end;
-  $stack-horizontal-alignments: start, center, end;
 
   display: flex;
 
@@ -27,6 +22,8 @@
   }
 
   // Spacing
+  $stack-sizes: 1, 2, 3, 4, 5;
+
   @each $size in $stack-sizes {
     &--spacing-#{$size} {
       @include create-breakpoint-selectors {
@@ -35,27 +32,36 @@
     }
   }
 
-  // Horizontal align
-  @each $align in $stack-horizontal-alignments {
-    &--align-#{$align} {
+  // Alignment
+  $stack-align: (
+    start: flex-start,
+    center: center,
+    end: flex-end,
+  );
+
+  @each $align-name, $align-value in $stack-align {
+    // Block
+    &--align-block-#{$align-name} {
       @include create-breakpoint-selectors {
-        justify-content: $align;
+        &#{$root}--vertical {
+          justify-content: $align-value;
+        }
 
         &#{$root}--horizontal {
-          align-items: $align;
+          align-items: $align-value;
         }
       }
     }
-  }
 
-  // Vertical align
-  @each $valign in $stack-vertical-alignments {
-    &--valign-#{$valign} {
+    // Inline
+    &--align-inline-#{$align-name} {
       @include create-breakpoint-selectors {
-        align-items: $valign;
+        &#{$root}--vertical {
+          align-items: $align-value;
+        }
 
         &#{$root}--horizontal {
-          justify-content: $valign;
+          justify-content: $align-value;
         }
       }
     }

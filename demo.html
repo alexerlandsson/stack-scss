@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Stack SCSS Demo</title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="Experimental stack component used to stack elements horizontally and vertically.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+      :root {
+        --base-unit: 8px;
+        --placeholder-bg: #ebf5ff;
+        --placeholder-text: #567890;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: calc(var(--base-unit) * 4);
+        font-family: sans-serif;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h1,
+      h2 {
+        margin-top: 0;
+        margin-bottom: calc(var(--base-unit) * 2);
+      }
+
+      .section + .section {
+        margin-top: calc(var(--base-unit) * 8);
+      }
+
+      .description {
+        color: #757575;
+        margin-bottom: calc(var(--base-unit) * 2);
+      }
+
+      .placeholder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(var(--base-unit) * 7);
+        padding: calc(var(--base-unit) * 2);
+        background-color: var(--placeholder-bg);
+        color: var(--placeholder-text);
+        border: 1px dashed;
+        border-radius: calc(var(--base-unit) * 0.5);
+      }
+    </style>
+
+    <link rel="stylesheet" href="./dist/stack.css">
+  </head>
+  <body>
+    <main class="container">
+      <div class="section">
+        <h1>Stack SCSS Demo</h1>
+      </div>
+      
+      <div class="section">
+        <h2>Default</h2>
+        <div class="description">stack</div>
+        <div class="stack">
+          <div class="placeholder">Placeholder</div>
+          <div class="placeholder">Placeholder</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Vertical</h2>
+        <div class="description">stack stack--vertical stack--spacing-2</div>
+        <div class="stack stack--vertical stack--spacing-2">
+          <div class="placeholder">Placeholder</div>
+          <div class="placeholder">Placeholder</div>
+          <div class="placeholder">Placeholder</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Vertical Center</h2>
+        <div class="description">stack stack--vertical stack--spacing-2 stack--align-inline-center</div>
+        <div class="stack stack--vertical stack--spacing-2 stack--align-inline-center">
+          <div class="placeholder">Placeholder</div>
+          <div class="placeholder">Placeholder</div>
+          <div class="placeholder">Placeholder</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Horizontal</h2>
+        <div class="description">stack stack--horizontal stack--spacing-2</div>
+        <div class="stack stack--horizontal stack--spacing-2">
+          <div class="placeholder">Placeholder</div>
+          <div class="placeholder">Placeholder</div>
+          <div class="placeholder">Placeholder</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Horizontal Align Block Start</h2>
+        <div class="description">stack stack--horizontal stack--spacing-2 stack--align-block-start stack--separate-last-child</div>
+        <div class="stack stack--horizontal stack--spacing-2 stack--align-block-start stack--separate-last-child">
+          <div class="placeholder">Placeholder</div>
+          <div class="placeholder" style="height: 100px;">Placeholder</div>
+          <div class="placeholder">Placeholder</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Horizontal Align Inline End</h2>
+        <div class="description">stack stack--horizontal stack--spacing-2 stack--align-inline-end</div>
+        <div class="stack stack--horizontal stack--spacing-2 stack--align-inline-end">
+          <div class="placeholder">Placeholder</div>
+          <div class="placeholder">Placeholder</div>
+          <div class="placeholder">Placeholder</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Horizontal + Vertical md</h2>
+        <div class="description">stack stack--horizontal stack--vertical:md stack--spacing-2</div>
+        <div class="stack stack--horizontal stack--vertical:md stack--spacing-2">
+          <div class="placeholder">Placeholder</div>
+          <div class="placeholder">Placeholder</div>
+          <div class="placeholder">Placeholder</div>
+        </div>
+      </div>
+
+    </main>
+  </body>
+</html>

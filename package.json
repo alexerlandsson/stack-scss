@@ -5,7 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass ./src/index.scss ./dist/stack.css",
+    "sass": "sass ./src/stack/index.scss ./dist/stack.css",
     "prettier": "prettier --write .",
     "stylelint": "stylelint '**/*.scss'"
   },

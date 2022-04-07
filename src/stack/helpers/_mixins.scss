@@ -5,15 +5,16 @@
 
 // Genereate breakpoint selects for breakpoint specific styling
 @mixin create-breakpoint-selectors {
-  @content;
-
   // Loop each breakpoint in $breakpoints to create it's unique selector
   // The selectors uses the format ":[BREAKPOINT_NAME]"
   @each $breakpoint-name, $media-query in breakpoints.$breakpoints {
-    &\:#{$breakpoint-name} {
+    // Use :is() with #stack-important to increase specificity
+    :is(&\:#{$breakpoint-name}, #stack-important) {
       @media #{meta.inspect($media-query)} {
         @content;
       }
     }
   }
+
+  @content;
 }
